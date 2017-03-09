@@ -24,7 +24,7 @@ const mapDispatchToProps = {
 
 class Store extends Component {
   componentWillMount() {
-    this.props.getStore(411);
+    this.props.getStore(this.props.params.id);
   }
   render() {
     return (
@@ -62,6 +62,7 @@ Store.propTypes = {
   handleMapMounted: React.PropTypes.func,
   handleMarkerClick: React.PropTypes.func,
   handleMarkerClose: React.PropTypes.func,
+  params: React.PropTypes.object,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Store);
